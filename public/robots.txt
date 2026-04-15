@@ -1,0 +1,46 @@
+# Optimized robots.txt for B2B InDemand
+# Last updated: [current date]
+
+User-agent: *
+Allow: /
+Crawl-delay: 10
+
+# Sitemap location (must be absolute URL)
+Sitemap: https://b2bindemand.com/sitemap.xml
+
+# Important directories to emphasize (redundant since we Allow: / but good for clarity)
+Allow: /about/
+Allow: /campaigns/
+Allow: /intent-targeting/
+Allow: /smart-syndication/
+Allow: /event-based-lead-generation/
+Allow: /careers/
+Allow: /privacy-policy/
+Allow: /faq/
+
+# Blog section (note: /* is more standard than *)
+Allow: /blog/
+Allow: /blog/*/
+
+# Disallowed directories (more precise syntax)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft-posts/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+
+# Query parameters to ignore (fixed syntax)
+Clean-param: utm_source /
+Clean-param: utm_medium /
+Clean-param: utm_campaign /
+Clean-param: utm_content /
+Clean-param: utm_term /
+
+# Block duplicate content
+Disallow: /*?*
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.css$

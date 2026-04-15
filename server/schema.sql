@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS b2bindemand;
+USE b2bindemand;
+
+CREATE TABLE IF NOT EXISTS contact_submissions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(50) NOT NULL,
+    budget VARCHAR(100) NOT NULL,
+    message TEXT,
+    source VARCHAR(255),
+    agreed_to_policy BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,25 @@
+{
+  "short_name": "B2BinDemand",
+  "name": "B2B Lead Generation Services company | B2BinDemand",
+  "icons": [
+    {
+      "src": "https://b2bindemand.com/wp-content/uploads/2025/02/cropped-B2BinDemand_Favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "https://b2bindemand.com/wp-content/uploads/2025/02/cropped-B2BinDemand_Favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://b2bindemand.com/wp-content/uploads/2025/02/cropped-B2BinDemand_Favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
