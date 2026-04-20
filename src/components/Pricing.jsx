@@ -1,10 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Pricing = () => {
     const [bubbles, setBubbles] = useState([]);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        workEmail: '',
+        selectedPlan: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [captchaValue, setCaptchaValue] = useState(null);
+    const [errors, setErrors] = useState({});
+    const [submitMessage, setSubmitMessage] = useState({ type: '', text: '' });
+    
     const heroRef = useRef(null);
     const formRef = useRef(null);
+    const recaptchaRef = useRef(null);
+
+    // Your reCAPTCHA site key
+    const RECAPTCHA_SITE_KEY = "6LcpZMEsAAAAAE332GrhHRcYDUaCE87qkwuqU4IL";
 
     const handleMouseMove = (e) => {
         if (!heroRef.current) return;
@@ -27,6 +43,134 @@ const Pricing = () => {
             behavior: "smooth",
             block: "center"
         });
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        if (errors[name]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
+        if (submitMessage.text) {
+            setSubmitMessage({ type: '', text: '' });
+        }
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+        
+        if (!formData.firstName.trim()) {
+            newErrors.firstName = 'First name is required';
+        } else if (formData.firstName.length < 2) {
+            newErrors.firstName = 'First name must be at least 2 characters';
+        }
+        
+        if (!formData.lastName.trim()) {
+            newErrors.lastName = 'Last name is required';
+        } else if (formData.lastName.length < 2) {
+            newErrors.lastName = 'Last name must be at least 2 characters';
+        }
+        
+        if (!formData.workEmail.trim()) {
+            newErrors.workEmail = 'Work email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.workEmail)) {
+            newErrors.workEmail = 'Please enter a valid email address';
+        } else if (formData.workEmail.split('@')[1]?.includes('gmail') || formData.workEmail.split('@')[1]?.includes('yahoo') || formData.workEmail.split('@')[1]?.includes('hotmail')) {
+            newErrors.workEmail = 'Please use your work email address';
+        }
+        
+        if (!formData.selectedPlan) {
+            newErrors.selectedPlan = 'Please select a plan';
+        }
+        
+        // Captcha is required for both development and production
+        if (!captchaValue) {
+            newErrors.captcha = 'Please verify that you are not a robot';
+        }
+        
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleCaptchaChange = (value) => {
+        setCaptchaValue(value);
+        if (errors.captcha) {
+            setErrors(prev => ({
+                ...prev,
+                captcha: ''
+            }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        if (!validateForm()) {
+            return;
+        }
+        
+        setIsSubmitting(true);
+        setSubmitMessage({ type: '', text: '' });
+        
+        try {
+            const submissionData = {
+                ...formData,
+                captchaToken: captchaValue,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Send data to your backend API
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData),
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                setSubmitMessage({ 
+                    type: 'success', 
+                    text: 'Thank you for your interest! We will contact you soon.' 
+                });
+                // Reset form
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    workEmail: '',
+                    selectedPlan: ''
+                });
+                // Reset captcha
+                recaptchaRef.current?.reset();
+                setCaptchaValue(null);
+            } else {
+                setSubmitMessage({ 
+                    type: 'error', 
+                    text: result.message || 'Something went wrong. Please try again.' 
+                });
+                // Reset captcha on error
+                recaptchaRef.current?.reset();
+                setCaptchaValue(null);
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitMessage({ 
+                type: 'error', 
+                text: 'Network error. Please check your connection and try again.' 
+            });
+            recaptchaRef.current?.reset();
+            setCaptchaValue(null);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const plans = [
@@ -88,8 +232,7 @@ const Pricing = () => {
 
     return (
         <div className="bg-[#F8FAFC] min-h-screen overflow-x-hidden" style={{ fontFamily: "'Poppins', sans-serif" }}>
-
-            {/* HERO SECTION - FULLY RESPONSIVE */}
+            {/* HERO SECTION */}
             <section
                 ref={heroRef}
                 onMouseMove={handleMouseMove}
@@ -104,67 +247,134 @@ const Pricing = () => {
                 ))}
 
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-                    {/* Left Content */}
                     <div className="text-center lg:text-left px-2 sm:px-0">
                         <div className="text-[rgb(242,108,30)] font-bold uppercase text-xs sm:text-sm mb-3 sm:mb-4 tracking-wide">
                             Pricing Plans
                         </div>
-
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight">
                             Get Leads. <br className="hidden sm:block" />
                             <span className="text-[rgb(242,108,30)]">Grow Faster.</span>
                         </h1>
-
                         <p className="text-slate-500 text-base sm:text-lg max-w-md mx-auto lg:mx-0">
                             Simple pricing, no hidden fees.
                         </p>
                     </div>
 
-                    {/* FORM - FULLY RESPONSIVE */}
                     <div
                         ref={formRef}
                         className="bg-blue-50 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] shadow-[0_25px_60px_rgba(242,108,30,0.25)] border border-blue-100 w-full max-w-md mx-auto lg:ml-auto lg:mr-0"
                     >
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                                <input type="text" placeholder="First Name" className="input-field" />
-                                <input type="text" placeholder="Last Name" className="input-field" />
+                                <div>
+                                    <input 
+                                        type="text" 
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleInputChange}
+                                        placeholder="First Name" 
+                                        className={`input-field ${errors.firstName ? 'border-red-500' : ''}`}
+                                    />
+                                    {errors.firstName && (
+                                        <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <input 
+                                        type="text" 
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
+                                        placeholder="Last Name" 
+                                        className={`input-field ${errors.lastName ? 'border-red-500' : ''}`}
+                                    />
+                                    {errors.lastName && (
+                                        <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
+                                    )}
+                                </div>
                             </div>
 
-                            <input type="email" placeholder="Work Email" className="input-field" />
+                            <div>
+                                <input 
+                                    type="email" 
+                                    name="workEmail"
+                                    value={formData.workEmail}
+                                    onChange={handleInputChange}
+                                    placeholder="Work Email" 
+                                    className={`input-field ${errors.workEmail ? 'border-red-500' : ''}`}
+                                />
+                                {errors.workEmail && (
+                                    <p className="text-red-500 text-xs mt-1">{errors.workEmail}</p>
+                                )}
+                            </div>
 
-                            <select className="input-field">
-                                <option>Select Plan</option>
-                                {plans.map(p => (
-                                    <option key={p.name}>{p.name}</option>
-                                ))}
-                            </select>
+                            <div>
+                                <select 
+                                    name="selectedPlan"
+                                    value={formData.selectedPlan}
+                                    onChange={handleInputChange}
+                                    className={`input-field ${errors.selectedPlan ? 'border-red-500' : ''}`}
+                                >
+                                    <option value="">Select Plan</option>
+                                    {plans.map(p => (
+                                        <option key={p.name} value={p.name}>{p.name}</option>
+                                    ))}
+                                </select>
+                                {errors.selectedPlan && (
+                                    <p className="text-red-500 text-xs mt-1">{errors.selectedPlan}</p>
+                                )}
+                            </div>
 
-                            <button className="w-full bg-[rgb(242,108,30)] text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:opacity-90 transition-all text-sm sm:text-base">
-                                Start Your Trial
+                            {/* Google reCAPTCHA - Enabled for both development and production */}
+                            <div className="flex justify-center">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey={RECAPTCHA_SITE_KEY}
+                                    onChange={handleCaptchaChange}
+                                    theme="light"
+                                    size="normal"
+                                />
+                            </div>
+                            {errors.captcha && (
+                                <p className="text-red-500 text-xs text-center">{errors.captcha}</p>
+                            )}
+
+                            {submitMessage.text && (
+                                <div className={`p-3 rounded-lg text-center text-sm ${
+                                    submitMessage.type === 'success' 
+                                        ? 'bg-green-100 text-green-700' 
+                                        : 'bg-red-100 text-red-700'
+                                }`}>
+                                    {submitMessage.text}
+                                </div>
+                            )}
+
+                            <button 
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full bg-[rgb(242,108,30)] text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:opacity-90 transition-all text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {isSubmitting ? 'Submitting...' : 'Start Your Trial'}
                             </button>
                         </form>
                     </div>
                 </div>
             </section>
 
-            {/* CARDS SECTION - FULLY RESPONSIVE GRID */}
+            {/* CARDS SECTION */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-20 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {plans.map((plan, i) => (
                     <div key={i} className="p-6 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300">
                         <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">{plan.name}</h3>
-
                         <p className="text-sm text-gray-500 mb-5 sm:mb-6 leading-relaxed">
                             {plan.desc}
                         </p>
-
                         <button
                             onClick={scrollToForm}
                             className="w-full py-2.5 sm:py-3 rounded-xl bg-[rgb(0,95,115)] text-white font-bold mb-5 sm:mb-6 hover:opacity-90 transition-all text-sm sm:text-base"
                         >
                             Get Started
                         </button>
-
                         <ul className="space-y-2 sm:space-y-2.5 text-sm">
                             {plan.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-start sm:items-center gap-2 text-gray-700 text-xs sm:text-sm">
@@ -177,12 +387,11 @@ const Pricing = () => {
                 ))}
             </div>
 
-            {/* TABLE SECTION - HORIZONTAL SCROLL ON MOBILE */}
+            {/* TABLE SECTION */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
                     Compare Features
                 </h2>
-
                 <div className="overflow-x-auto rounded-2xl sm:rounded-3xl shadow-xl">
                     <table className="min-w-[640px] md:min-w-full w-full bg-white">
                         <thead>
@@ -193,12 +402,10 @@ const Pricing = () => {
                                 ))}
                             </tr>
                         </thead>
-
                         <tbody>
                             {tableData.map((row, i) => (
                                 <tr key={i} className="border-t hover:bg-gray-50 transition-colors">
                                     <td className="p-4 sm:p-5 md:p-6 text-gray-700 text-xs sm:text-sm md:text-base">{row.feature}</td>
-
                                     {row.v.map((val, idx) => (
                                         <td key={idx} className="p-4 sm:p-5 md:p-6 text-center">
                                             {val ? (
@@ -215,17 +422,15 @@ const Pricing = () => {
                 </div>
             </div>
 
-            {/* DRAWER - HIDDEN ON MOBILE, SHOWN ON TABLET+ */}
+            {/* DRAWER */}
             <div className="hidden md:block fixed right-0 top-1/2 -translate-y-1/2 z-30"
                 onMouseEnter={() => setIsDrawerOpen(true)}
                 onMouseLeave={() => setIsDrawerOpen(false)}>
-
                 <div className={`bg-[rgb(242,108,30)] text-white px-2 sm:px-3 py-8 sm:py-10 rounded-l-3xl transition-opacity duration-300 ${isDrawerOpen ? 'opacity-0' : 'opacity-100'}`}>
                     <span className="[writing-mode:vertical-rl] rotate-180 text-xs sm:text-sm font-bold tracking-wider">
                         ROI Calculator
                     </span>
                 </div>
-
                 <div className={`absolute right-4 top-1/2 -translate-y-1/2 w-64 sm:w-72 bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-300 ${isDrawerOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-4'}`}>
                     <h2 className="text-lg sm:text-xl font-bold mb-4">ROI Tool</h2>
                     <p className="text-gray-500 text-xs sm:text-sm mb-4">Calculate your potential return on investment</p>
@@ -235,7 +440,7 @@ const Pricing = () => {
                 </div>
             </div>
 
-            {/* Mobile Floating Button - Visible only on mobile */}
+            {/* Mobile Floating Button */}
             <div className="md:hidden fixed bottom-6 right-6 z-30">
                 <button 
                     onClick={scrollToForm}
@@ -258,34 +463,27 @@ const Pricing = () => {
                     transition: all 0.2s ease;
                     background-color: white;
                 }
-                
                 .input-field:focus {
                     outline: none;
                     border-color: rgb(242, 108, 30);
                     box-shadow: 0 0 0 3px rgba(242, 108, 30, 0.1);
                 }
-                
                 @media (min-width: 640px) {
                     .input-field {
                         padding: 1rem;
                         font-size: 1rem;
                     }
                 }
-                
                 @keyframes bubbleFade {
                     100% { opacity: 0; transform: scale(2); }
                 }
                 .animate-bubbleFade { 
                     animation: bubbleFade 0.8s forwards; 
                 }
-                
-                /* Smooth table scrolling */
                 .overflow-x-auto {
                     -webkit-overflow-scrolling: touch;
                     scrollbar-width: thin;
                 }
-                
-                /* Better touch targets on mobile */
                 @media (max-width: 640px) {
                     button, 
                     .input-field,

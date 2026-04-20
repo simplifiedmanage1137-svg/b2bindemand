@@ -70,19 +70,45 @@ const Navbar = () => {
               </motion.div>
             ))}
 
-            {/* Library as a Standalone Menu Item */}
-            {/* <motion.div whileHover={{ y: -2 }}>
+            {/* New Tabs: Pricing, Audience, ROI Calculator */}
+            <motion.div whileHover={{ y: -2 }}>
               <NavLink 
-                to="/Resources/Library" 
+                to="/pricing" 
                 className={({ isActive }) => 
-                  `text-[15px] font-medium transition-colors duration-200 ${
+                  `text-[15px] font-medium transition-colors duration-200 px-2 ${
                     isActive ? 'text-[#FF6B2C]' : 'text-gray-700 hover:text-gray-900'
                   }`
                 }
               >
-                Library
+                Pricing
               </NavLink>
-            </motion.div> */}
+            </motion.div>
+
+            <motion.div whileHover={{ y: -2 }}>
+              <NavLink 
+                to="/audience" 
+                className={({ isActive }) => 
+                  `text-[15px] font-medium transition-colors duration-200 px-2 ${
+                    isActive ? 'text-[#FF6B2C]' : 'text-gray-700 hover:text-gray-900'
+                  }`
+                }
+              >
+                Audience
+              </NavLink>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -2 }}>
+              <NavLink 
+                to="/roi-calculator" 
+                className={({ isActive }) => 
+                  `text-[15px] font-medium transition-colors duration-200 px-2 ${
+                    isActive ? 'text-[#FF6B2C]' : 'text-gray-700 hover:text-gray-900'
+                  }`
+                }
+              >
+                ROI Calculator
+              </NavLink>
+            </motion.div>
           </div>
 
           {/* Contact Us Button */}
@@ -149,6 +175,32 @@ const Navbar = () => {
                     onClose={() => setIsOpen(false)}
                   />
                 ))}
+                
+                {/* Mobile Menu: New Tabs */}
+                <Link to="/pricing" onClick={() => setIsOpen(false)}>
+                  <div className={`py-4 px-6 border-b border-gray-100 text-medium font-medium ${
+                    location.pathname === '/pricing' ? 'text-[#FF6B2C]' : 'text-gray-700'
+                  }`}>
+                    Pricing
+                  </div>
+                </Link>
+                
+                <Link to="/audience" onClick={() => setIsOpen(false)}>
+                  <div className={`py-4 px-6 border-b border-gray-100 text-medium font-medium ${
+                    location.pathname === '/audience' ? 'text-[#FF6B2C]' : 'text-gray-700'
+                  }`}>
+                    Audience
+                  </div>
+                </Link>
+                
+                <Link to="/roi-calculator" onClick={() => setIsOpen(false)}>
+                  <div className={`py-4 px-6 border-b border-gray-100 text-medium font-medium ${
+                    location.pathname === '/roi-calculator' ? 'text-[#FF6B2C]' : 'text-gray-700'
+                  }`}>
+                    ROI Calculator
+                  </div>
+                </Link>
+                
                 <Link to="/contact-us" onClick={() => setIsOpen(false)}>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
