@@ -30,10 +30,18 @@ import GDPRPolicy from "./components/GDPRPolicy";
 import Pricing from "./components/Pricing";
 import Audience from "./components/Audience";
 import ROICalculator from "./components/ROICalculator";
+import AudienceDetails from "./components/AudienceDetails"; 
+import AudienceMap from "./components/AudienceMap";
+import B2B_In_demand from "./components/B2B_In_demand";
+import BarChart from "./components/BarChart";
+import CategoryTabs from "./components/CategoryTabs";
+import DonutChart from "./components/DonutChart";
+import LineChart from "./components/LineChart";
+import AudienceStats from "./components/AudienceStats";
+import KeywordList from "./components/KeywordList";
+import AudienceData from "./components/audienceData"; // Fixed: Uppercase 'A'
 
 function App() {
-  //   ReactGA.initialize("YOUR_GOOGLE_ANALYTICS_ID");
-  // ReactGA.send("pageview");
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -62,11 +70,21 @@ function App() {
         <Route path="/case-study/:id/:slug" element={<CaseStudyDetails />} />
         <Route path="/faqs" element={<FAQ />} />
         <Route path="/sitemap" element={<Sitemap />} />
-        {/* 404 route - must be last */}
-        <Route path="*" element={<NotFound />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/audience" element={<Audience />} />
         <Route path="/roi-calculator" element={<ROICalculator />} />
+        <Route path="/audience/:category" element={<AudienceDetails />} />
+        <Route path="/audience-map" element={<AudienceMap />} />
+        <Route path="/audience-status" element={<AudienceStats />} />
+        <Route path="/b2b-in-demand" element={<B2B_In_demand />} />
+        <Route path="/bar-chart" element={<BarChart />} />
+        <Route path="/category-tabs" element={<CategoryTabs />} />
+        <Route path="/donut-chart" element={<DonutChart />} />
+        <Route path="/keyword-list" element={<KeywordList heading="Sample Keywords" items={["Keyword 1", "Keyword 2"]} />} />
+        <Route path="/line-chart" element={<LineChart />} />
+        <Route path="/audience-data" element={<AudienceData />} />
+        {/* 404 route - must be last */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

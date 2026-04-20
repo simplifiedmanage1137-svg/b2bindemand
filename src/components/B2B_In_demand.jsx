@@ -1,46 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-// Moved outside ROICalculator to prevent remounting on every render
-const StatCard = ({ title, value, subValue, icon, accentColor }) => (
-    <div className="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all w-full max-w-[280px] mx-auto lg:mx-0">
-        <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg shadow-inner"
-                style={{ backgroundColor: `${accentColor}15`, color: accentColor }}>
-                {icon}
-            </div>
-            <div className="flex items-center gap-1 text-[#10b981] font-bold text-[10px] bg-emerald-50 px-2 py-1 rounded-lg">
-                <span>↑</span> {subValue}
-            </div>
-        </div>
-        <h4 className="text-2xl font-bold text-slate-800 mb-0.5 tracking-tight">{value}</h4>
-        <p className="text-slate-400 font-semibold text-[10px] uppercase tracking-widest">{title}</p>
-    </div>
-);
-
-const InputField = ({ label, icon, value, onChange, onBlur, helperText }) => (
-    <div className="mb-4 text-left font-poppins">
-        <label className="block text-slate-600 font-bold text-[10px] mb-1.5 tracking-wider uppercase">{label}</label>
-        <div className="relative group">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm group-focus-within:text-[rgb(0,95,115)] transition-colors">
-                {icon}
-            </span>
-            <input
-                type="number"
-                className="w-full bg-white border border-slate-200 py-2.5 pl-10 pr-4 rounded-xl outline-none transition-all focus:border-[rgb(0,95,115)] focus:ring-2 focus:ring-[rgb(0,95,115)]/10 shadow-sm text-sm font-medium"
-                value={value}
-                onChange={(e) => onChange(e.target.value)}
-                onBlur={onBlur}
-            />
-        </div>
-        <p className="text-slate-400 text-[10px] mt-1 italic">{helperText}</p>
-    </div>
-);
-
 const ROICalculator = () => {
     const [spend, setSpend] = useState('10000');
     const [leads, setLeads] = useState('100');
     const [conversion, setConversion] = useState('5');
     const [dealValue, setDealValue] = useState('5000');
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const [calculatedValues, setCalculatedValues] = useState({
         monthlyRevenue: 0,
@@ -50,6 +15,7 @@ const ROICalculator = () => {
     });
 
     useEffect(() => {
+        // Adding Poppins font dynamically
         const link = document.createElement('link');
         link.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap';
         link.rel = 'stylesheet';
@@ -69,7 +35,7 @@ const ROICalculator = () => {
         const improvedMonthlyRevenue = (improvedLeads * (improvedConversion / 100)) * dealValueNum;
         const currentROI = spendNum > 0 ? ((currentMonthlyRevenue - spendNum) / spendNum * 100) : 0;
         const improvedROI = spendNum > 0 ? ((improvedMonthlyRevenue - spendNum) / spendNum * 100) : 0;
-
+        
         setCalculatedValues({
             monthlyRevenue: improvedMonthlyRevenue - currentMonthlyRevenue,
             roiIncrease: improvedROI - currentROI,
@@ -83,6 +49,7 @@ const ROICalculator = () => {
         setLeads('100');
         setConversion('5');
         setDealValue('5000');
+        setTimeout(() => handleCalculate(), 0);
     };
 
     const getCurrentValues = () => {
@@ -104,6 +71,43 @@ const ROICalculator = () => {
     };
 
     const values = getCurrentValues();
+
+    const StatCard = ({ title, value, subValue, icon, accentColor }) => (
+        <div className="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all w-full max-w-[280px] mx-auto lg:mx-0">
+            <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg shadow-inner" 
+                     style={{ backgroundColor: `${accentColor}15`, color: accentColor }}>
+                    {icon}
+                </div>
+                <div className="flex items-center gap-1 text-[#10b981] font-bold text-[10px] bg-emerald-50 px-2 py-1 rounded-lg">
+                    <span>↑</span> {subValue}
+                </div>
+            </div>
+            <h4 className="text-2xl font-bold text-slate-800 mb-0.5 tracking-tight">{value}</h4>
+            <p className="text-slate-400 font-semibold text-[10px] uppercase tracking-widest">{title}</p>
+        </div>
+    );
+
+    const InputField = ({ label, icon, value, onChange, helperText }) => (
+        <div className="mb-4 text-left font-poppins">
+            <label className="block text-slate-600 font-bold text-[10px] mb-1.5 tracking-wider uppercase">{label}</label>
+            <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm group-focus-within:text-[rgb(0,95,115)] transition-colors">
+                    {icon}
+                </span>
+                <input
+                    type="number"
+                    className="w-full bg-white border border-slate-200 py-2.5 pl-10 pr-4 rounded-xl outline-none transition-all focus:border-[rgb(0,95,115)] focus:ring-2 focus:ring-[rgb(0,95,115)]/10 shadow-sm text-sm font-medium"
+                    value={value}
+                    onChange={(e) => {
+                        onChange(e.target.value);
+                        setTimeout(() => handleCalculate(), 0);
+                    }}
+                />
+            </div>
+            <p className="text-slate-400 text-[10px] mt-1 italic">{helperText}</p>
+        </div>
+    );
 
     return (
         <section 
@@ -129,10 +133,10 @@ const ROICalculator = () => {
                         <div className="bg-white/90 backdrop-blur-xl rounded-[32px] shadow-xl shadow-slate-200/60 p-6 md:p-8 border border-white w-full max-w-sm">
                             <h3 className="text-lg font-bold text-slate-900 mb-6">Campaign Metrics</h3>
                             
-                            <InputField label="Monthly Spend" icon="$" value={spend} onChange={setSpend} onBlur={handleCalculate} helperText="Total monthly investment" />
-                            <InputField label="Current Leads" icon="👥" value={leads} onChange={setLeads} onBlur={handleCalculate} helperText="Monthly lead volume" />
-                            <InputField label="Conversion Rate" icon="%" value={conversion} onChange={setConversion} onBlur={handleCalculate} helperText="Lead-to-deal percentage" />
-                            <InputField label="Avg Deal Value" icon="$" value={dealValue} onChange={setDealValue} onBlur={handleCalculate} helperText="Revenue per deal" />
+                            <InputField label="Monthly Spend" icon="$" value={spend} onChange={setSpend} helperText="Total monthly investment" />
+                            <InputField label="Current Leads" icon="👥" value={leads} onChange={setLeads} helperText="Monthly lead volume" />
+                            <InputField label="Conversion Rate" icon="%" value={conversion} onChange={setConversion} helperText="Lead-to-deal percentage" />
+                            <InputField label="Avg Deal Value" icon="$" value={dealValue} onChange={setDealValue} helperText="Revenue per deal" />
 
                             <div className="grid grid-cols-2 gap-3 mt-8">
                                 <button 
