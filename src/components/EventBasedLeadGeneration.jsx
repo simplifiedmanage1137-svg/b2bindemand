@@ -388,7 +388,7 @@ const EventBasedLeadGeneration = () => {
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}> <img
               src={Make_Meaningful}
-              alt=""
+              alt="Make meaningful event-based B2B connections"
               className={styles.featureIconImage}
               style={{ width: "70px", height: "70px" }}
             /></div>
@@ -401,7 +401,7 @@ const EventBasedLeadGeneration = () => {
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><img
               src={Turn_Conversations}
-              alt=""
+              alt="Turn conversations into sales conversions"
               className={styles.featureIconImage}
               style={{ width: "70px", height: "70px" }}
             /></div>
@@ -413,7 +413,7 @@ const EventBasedLeadGeneration = () => {
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><img
               src={Get_in}
-              alt=""
+              alt="Get in front of the right decision makers before the event"
               className={styles.featureIconImage}
               style={{ width: "70px", height: "70px" }}
             /></div>

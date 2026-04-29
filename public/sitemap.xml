@@ -2,68 +2,500 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://b2bindemand.com/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/campaigns</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/intent-targeting</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/smart-syndication</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/event-based-lead-generation</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/blog</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/library</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/about-b2bindemand</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/b2bindemand-careers</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/faqs</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://b2bindemand.com/contact-us</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/pricing</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/audience</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/roi-calculator</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/audience-map</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/audience-status</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/b2b-in-demand</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/webinars/podcasts</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/privacy-policy</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/cookie-policy</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/gdpr-policy</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/unsubscribe</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/sitemap</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/first-party-vs-third-party-intent-data-which-should-you-use</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/why-your-content-syndication-programme-isnt-converting-and-how-to-fix-it</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/in-person-vs-virtual-b2b-events-in-2026-where-should-your-budget-go</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-brief-a-b2b-demand-generation-agency</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/measuring-content-syndication-success-the-metrics-that-actually-matter</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/the-b2b-event-promotion-playbook-driving-registrations-that-show-up</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-intent-targeting-reduces-wasted-b2b-ad-spend</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-content-syndication-the-complete-guide-for-2026</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/what-is-b2b-buyer-intent-data-and-how-does-it-actually-work</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/why-sales-qualified-leads-often-dont-turn-into-deals-and-how-to-fix-it</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/outsourcing-appointment-setting-what-to-learn-how-to-do-it-right</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-boost-b2b-sales-with-emotional-buying-strategies-in-2026</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/ai-marketing-revolution-unveiled-top-b2b-strategies-for-2026</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/top-b2b-event-marketing-trends-to-dominate-in-2025</loc>
+    <lastmod>2024-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-b2b-content-marketing-builds-thought-leadership-in-2025</loc>
+    <lastmod>2024-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/opportunistic-learning-in-b2b-marketing-why-it-matters-in-2025</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/best-b2b-content-syndication-services-for-growth-in-2025</loc>
+    <lastmod>2024-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/proven-b2b-email-marketing-tactics-to-boost-engagement-in-2025</loc>
+    <lastmod>2024-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/top-6-digital-marketing-trends-for-b2b-success-in-2025</loc>
+    <lastmod>2024-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/overcoming-b2b-marketing-challenges-win-your-audience-in-2025</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/best-b2b-marketing-podcasts-to-grow-your-strategy-in-2025</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/best-ai-tools-and-strategies-for-b2b-success-in-2025</loc>
+    <lastmod>2024-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/ethical-data-collection-for-b2b-marketers-top-strategies-to-build-trust-in-2025</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-b2b-content-syndication-boosts-your-reach-in-2025-best-practices</loc>
+    <lastmod>2024-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/seo-strategies-for-high-quality-b2b-leads-in-2025</loc>
+    <lastmod>2024-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/tech-powered-b2b-customer-journey-top-strategies-for-2025</loc>
+    <lastmod>2024-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/top-7-b2b-content-marketing-trends-to-dominate-in-2025</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-marketing-automation-in-2025-strategies-to-maximize-roi</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/purpose-marketing-in-b2b-how-it-impacts-buyers-in-2025</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-tailor-b2b-case-studies-for-decision-makers-in-2025</loc>
+    <lastmod>2023-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/bullet-hole-analysis-for-b2b-marketing-precision-insights-for-2025</loc>
+    <lastmod>2023-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/installed-base-marketing-in-b2b-top-strategies-for-growth-in-2025</loc>
+    <lastmod>2023-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-boost-b2b-conversions-with-bant-sales-strategies-in-2025</loc>
+    <lastmod>2023-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-appointment-setting-in-2025-proven-strategies-to-go-from-cold-call-to-close</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/top-abm-strategies-for-b2b-success-win-in-2025</loc>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-master-b2b-email-segmentation-for-better-campaigns-in-2025</loc>
+    <lastmod>2023-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/data-driven-b2b-decision-making-best-practices-for-2025</loc>
+    <lastmod>2023-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/top-b2b-demand-generation-strategies-for-2025-drive-more-qualified-leads</loc>
+    <lastmod>2023-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/influencer-marketing-for-b2b-how-to-leverage-thought-leaders-in-2025</loc>
+    <lastmod>2023-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/mastering-the-b2b-buyer-journey-in-2025-strategies-for-success</loc>
+    <lastmod>2023-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-installed-base-marketing-boosts-b2b-success-in-2025</loc>
+    <lastmod>2023-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/why-transparency-and-quality-matter-in-b2b-marketing-2025-insights</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/best-b2b-marketing-strategies-for-2025-drive-impactful-results</loc>
+    <lastmod>2023-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-commitment-and-teamwork-fuel-b2b-success-in-2025</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-telemarketing-in-2025-top-strategies-to-overcome-challenges-and-win-leads</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-boost-b2b-webinar-and-event-registrations-in-2025</loc>
+    <lastmod>2023-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/best-b2b-email-marketing-strategies-for-success-in-2025</loc>
+    <lastmod>2023-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/boost-b2b-lead-generation-with-abm-email-strategies-in-2025</loc>
+    <lastmod>2023-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/why-database-protection-is-key-for-b2b-success-in-2025-best-practices</loc>
+    <lastmod>2023-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/ai-in-b2b-marketing-10-must-know-trends-to-dominate-2025</loc>
+    <lastmod>2023-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/tech-driven-b2b-marketing-in-2025-strategies-for-the-modern-era</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/thought-leadership-in-b2b-top-trends-shaping-the-industry-in-2025</loc>
+    <lastmod>2023-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-cybersecurity-in-2025-how-to-protect-your-operations-from-advanced-threats</loc>
+    <lastmod>2023-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/b2b-lead-generation-in-2025-proven-strategies-to-skyrocket-your-pipeline</loc>
+    <lastmod>2023-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/7-proven-b2b-content-marketing-strategies-to-boost-success-in-2025</loc>
+    <lastmod>2023-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-ai-powered-marketing-strategies-skyrocket-b2b-growth-in-2025</loc>
+    <lastmod>2023-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-core-values-drive-b2b-success-strategies-for-2025-growth</loc>
+    <lastmod>2023-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/how-to-engage-out-of-market-b2b-buyers-in-2025-proven-strategies</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/recession-proof-b2b-marketing-strategies-for-2025-thrive-in-tough-times</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b2bindemand.com/blog/abm-strategies-for-b2b-how-to-win-high-value-clients-in-2025</loc>
+    <lastmod>2021-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -19,13 +19,29 @@ const staticRoutes = [
   { url: '/faq', changefreq: 'weekly', priority: 0.7 },
   { url: '/contact-us', changefreq: 'weekly', priority: 0.7 },
   { url: '/about-b2bindemand', changefreq: 'weekly', priority: 0.7 },
+  { url: '/pricing', changefreq: 'weekly', priority: 0.8 },
+  { url: '/audience', changefreq: 'weekly', priority: 0.8 },
+  { url: '/roi-calculator', changefreq: 'weekly', priority: 0.8 },
+  { url: '/audience-map', changefreq: 'weekly', priority: 0.7 },
+  { url: '/audience-status', changefreq: 'weekly', priority: 0.7 },
+  { url: '/b2b-in-demand', changefreq: 'weekly', priority: 0.7 },
+  { url: '/webinars/podcasts', changefreq: 'weekly', priority: 0.7 },
+  { url: '/cookie-policy', changefreq: 'monthly', priority: 0.5 },
+  { url: '/gdpr-policy', changefreq: 'monthly', priority: 0.5 },
+  { url: '/unsubscribe', changefreq: 'monthly', priority: 0.5 },
+  { url: '/sitemap', changefreq: 'monthly', priority: 0.5 }
 ];
 
 async function generateSitemap() {
   try {
-    // Fetch all blog posts from the API
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/posts`);
-    const blogPosts = response.data;
+    // Fetch all blog posts from WordPress API
+    const response = await axios.get('https://b2b-oldbackup.b2bindemand.com/wp-json/wp/v2/posts?_embed&per_page=100');
+    const blogPosts = response.data.map(post => ({
+      slug: post.slug,
+      title: post.title?.rendered || "Untitled",
+      publishedAt: post.date,
+      updatedAt: post.modified
+    }));
 
     // Create a sitemap stream
     const stream = new SitemapStream({ hostname: BASE_URL });

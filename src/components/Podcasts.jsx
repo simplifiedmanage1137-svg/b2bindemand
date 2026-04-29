@@ -256,7 +256,7 @@ const Podcasts = () => {
         {/* Right Side - Image Box */}
         <div className="md:w-1/2 flex justify-center rounded-full">
           <div className="w-[280px] h-[320px] bg-[#EAEAEA] rounded-2xl shadow-md flex flex-col items-center p-4">
-            <img src={Building} alt="" />
+            <img src={Building} alt="Building resilient B2B strategies in uncertain times" />
             <p className="mt-4 text-center font-medium text-gray-800">
               Building Resilient B2B Strategies in Uncertain Times
             </p>

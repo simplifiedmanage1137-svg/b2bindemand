@@ -371,7 +371,7 @@ const IntentTargeting = () => {
             <div className={styles.featureIcon}>
               <img
                 src={Find_the}
-                alt=""
+                alt="Find buyers already looking for a solution"
                 className={styles.featureIconImage}
                 style={{ width: "70px", height: "70px" }}
               />
@@ -383,7 +383,7 @@ const IntentTargeting = () => {
             <div className={styles.featureIcon}>
               <img
                 src={Turn_Intent}
-                alt=""
+                alt="Turn buyer intent into revenue conversations"
                 className={styles.featureIconImage}
                 style={{ width: "70px", height: "70px" }}
               />
@@ -395,7 +395,7 @@ const IntentTargeting = () => {
             <div className={styles.featureIcon}>
               <img
                 src={Real_Time}
-                alt=""
+                alt="Real-time buyer intent insights for smarter sales"
                 className={styles.featureIconImage}
                 style={{ width: "70px", height: "70px" }}
               />

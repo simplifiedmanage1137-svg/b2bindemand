@@ -505,7 +505,7 @@ const SmartSyndication = () => {
             <div className={styles.featureIcon}>
               <img
                 src={From_Content}
-                alt=""
+                alt="From content to pipeline"
                 className={styles.featureIconImage}
                 style={{ width: "70px", height: "70px" }}
               />
@@ -517,7 +517,7 @@ const SmartSyndication = () => {
             <div className={styles.featureIcon}>
               <img
                 src={Track_Adjust_Scale}
-                alt=""
+                alt="Track, adjust, and scale your B2B lead generation"
                 className={styles.featureIconImage}
                 style={{ width: "70px", height: "70px" }}
               />
