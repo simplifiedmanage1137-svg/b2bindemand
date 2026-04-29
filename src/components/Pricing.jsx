@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const Pricing = () => {
+    const navigate = useNavigate();
     const [bubbles, setBubbles] = useState([]);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -43,6 +46,11 @@ const Pricing = () => {
             behavior: "smooth",
             block: "center"
         });
+    };
+
+    // Function to handle ROI Calculator navigation
+    const handleROICalculatorClick = () => {
+        navigate('/roi-calculator');
     };
 
     const handleInputChange = (e) => {
@@ -89,7 +97,6 @@ const Pricing = () => {
             newErrors.selectedPlan = 'Please select a plan';
         }
         
-        // Captcha is required for both development and production
         if (!captchaValue) {
             newErrors.captcha = 'Please verify that you are not a robot';
         }
@@ -125,7 +132,6 @@ const Pricing = () => {
                 timestamp: new Date().toISOString()
             };
             
-            // Send data to your backend API
             const response = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: {
@@ -141,14 +147,12 @@ const Pricing = () => {
                     type: 'success', 
                     text: 'Thank you for your interest! We will contact you soon.' 
                 });
-                // Reset form
                 setFormData({
                     firstName: '',
                     lastName: '',
                     workEmail: '',
                     selectedPlan: ''
                 });
-                // Reset captcha
                 recaptchaRef.current?.reset();
                 setCaptchaValue(null);
             } else {
@@ -156,7 +160,6 @@ const Pricing = () => {
                     type: 'error', 
                     text: result.message || 'Something went wrong. Please try again.' 
                 });
-                // Reset captcha on error
                 recaptchaRef.current?.reset();
                 setCaptchaValue(null);
             }
@@ -325,14 +328,11 @@ const Pricing = () => {
                                 )}
                             </div>
 
-                            {/* Google reCAPTCHA - Enabled for both development and production */}
                             <div className="flex justify-center">
                                 <ReCAPTCHA
                                     ref={recaptchaRef}
                                     sitekey={RECAPTCHA_SITE_KEY}
                                     onChange={handleCaptchaChange}
-                                    theme="light"
-                                    size="normal"
                                 />
                             </div>
                             {errors.captcha && (
@@ -361,34 +361,47 @@ const Pricing = () => {
                 </div>
             </section>
 
-            {/* CARDS SECTION */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-20 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                {plans.map((plan, i) => (
-                    <div key={i} className="p-6 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300">
-                        <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900">{plan.name}</h3>
-                        <p className="text-sm text-gray-500 mb-5 sm:mb-6 leading-relaxed">
-                            {plan.desc}
-                        </p>
-                        <button
-                            onClick={scrollToForm}
-                            className="w-full py-2.5 sm:py-3 rounded-xl bg-[rgb(0,95,115)] text-white font-bold mb-5 sm:mb-6 hover:opacity-90 transition-all text-sm sm:text-base"
-                        >
-                            Get Started
-                        </button>
-                        <ul className="space-y-2 sm:space-y-2.5 text-sm">
-                            {plan.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start sm:items-center gap-2 text-gray-700 text-xs sm:text-sm">
-                                    <span className="text-green-500 text-sm sm:text-base mt-0.5 sm:mt-0">✔</span>
-                                    <span className="flex-1">{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+            {/* CARDS SECTION - Fixed button alignment with consistent spacing */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-20 md:mt-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    {plans.map((plan, i) => (
+                        <div key={i} className="p-6 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300 flex flex-col">
+                            {/* Title - Same height for all */}
+                            <div className="min-h-[60px] sm:min-h-[50px]">
+                                <h3 className="text-lg sm:text-xl font-bold text-gray-900">{plan.name}</h3>
+                            </div>
+                            
+                            {/* Description - Fixed height area */}
+                            <div className="min-h-[80px] sm:min-h-[100px] mb-4">
+                                <p className="text-sm text-gray-500 leading-relaxed">
+                                    {plan.desc}
+                                </p>
+                            </div>
+                            
+                            {/* Button - Now perfectly aligned */}
+                            <button
+                                onClick={scrollToForm}
+                                className="w-full py-2.5 sm:py-3 rounded-xl bg-[rgb(0,95,115)] text-white font-bold hover:opacity-90 transition-all text-sm sm:text-base mb-5 sm:mb-6"
+                            >
+                                Get Started
+                            </button>
+                            
+                            {/* Features - Starts immediately after button */}
+                            <ul className="space-y-2 sm:space-y-2.5 text-sm">
+                                {plan.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-start sm:items-center gap-2 text-gray-700 text-xs sm:text-sm">
+                                        <span className="text-green-500 text-sm sm:text-base mt-0.5 sm:mt-0">✔</span>
+                                        <span className="flex-1">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             {/* TABLE SECTION */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
                     Compare Features
                 </h2>
@@ -434,7 +447,10 @@ const Pricing = () => {
                 <div className={`absolute right-4 top-1/2 -translate-y-1/2 w-64 sm:w-72 bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-300 ${isDrawerOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-4'}`}>
                     <h2 className="text-lg sm:text-xl font-bold mb-4">ROI Tool</h2>
                     <p className="text-gray-500 text-xs sm:text-sm mb-4">Calculate your potential return on investment</p>
-                    <button className="w-full bg-[rgb(242,108,30)] text-white py-2.5 sm:py-3 rounded-xl font-bold hover:opacity-90 transition-all text-sm sm:text-base">
+                    <button 
+                        onClick={handleROICalculatorClick}
+                        className="w-full bg-[rgb(242,108,30)] text-white py-2.5 sm:py-3 rounded-xl font-bold hover:opacity-90 transition-all text-sm sm:text-base"
+                    >
                         Calculate Now
                     </button>
                 </div>
@@ -443,15 +459,18 @@ const Pricing = () => {
             {/* Mobile Floating Button */}
             <div className="md:hidden fixed bottom-6 right-6 z-30">
                 <button 
-                    onClick={scrollToForm}
+                    onClick={handleROICalculatorClick}
                     className="bg-[rgb(242,108,30)] text-white p-4 rounded-full shadow-lg hover:opacity-90 transition-all"
-                    aria-label="Get Started"
+                    aria-label="ROI Calculator"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </button>
             </div>
+
+            {/* FULL WIDTH FOOTER SECTION - No padding, spans full width */}
+            <Footer />
 
             <style>{`
                 .input-field {

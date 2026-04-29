@@ -7,6 +7,7 @@ import BarChart from './BarChart';
 import AudienceMap from './AudienceMap';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { audienceCategories, audienceData } from './audienceData';
+import Footer from './Footer';
 
 const AudienceDetails = () => {
   const { category } = useParams();
@@ -96,7 +97,7 @@ const AudienceDetails = () => {
   };
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen text-slate-900 selection:bg-orange-100 pb-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div className="bg-[#F8FAFC] min-h-screen text-slate-900 selection:bg-orange-100" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <section className="relative overflow-hidden border-b border-slate-100 bg-white py-12 md:py-24 px-4 sm:px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto space-y-6 md:space-y-10 mt-7">
           <CategoryTabs categories={audienceCategories} activeCategory={activeCategory} onSelect={handleCategorySelect} />
@@ -129,15 +130,15 @@ const AudienceDetails = () => {
               <table className="min-w-full border-separate border-spacing-y-2 text-xs sm:text-sm bg-transparent">
                 <tbody>
                   {tableRows.map((row, index) => (
-                    <tr key={index} className="transition duration-200 ease-in-out hover:text-orange-500">
+                    <tr key={index} className="transition-none">
                       <td className="py-2 pr-3 align-top text-slate-600 bg-transparent">
-                        <span className="transition duration-200 ease-in-out hover:text-orange-500 cursor-pointer">{row.jobTitle}</span>
+                        <span>{row.jobTitle}</span>
                       </td>
                       <td className="py-2 px-3 align-top text-slate-600 bg-transparent">
-                        <span className="transition duration-200 ease-in-out hover:text-orange-500 cursor-pointer">{row.topic}</span>
+                        <span>{row.topic}</span>
                       </td>
                       <td className="py-2 pl-3 align-top text-slate-600 bg-transparent">
-                        <span className="transition duration-200 ease-in-out hover:text-orange-500 cursor-pointer">{row.keyword}</span>
+                        <span>{row.keyword}</span>
                       </td>
                     </tr>
                   ))}
@@ -233,6 +234,12 @@ const AudienceDetails = () => {
           </div>
         </div>
       </main>
+
+      {/* Spacer div to prevent footer from sticking to content */}
+      <div className="mt-16 sm:mt-20 md:mt-24"></div>
+
+      {/* FULL WIDTH FOOTER SECTION - No padding, spans full width */}
+      <Footer />
     </div>
   );
 };
