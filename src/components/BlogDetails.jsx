@@ -36,6 +36,7 @@ const BlogDetails = () => {
   const [activeHeading, setActiveHeading] = useState("");
   const contentRef = useRef(null);
   const scrollContainerRef = useRef(null);
+  const tocContainerRef = useRef(null); // New ref for TOC container
 
   // Disable body scroll and enable container scroll
   useEffect(() => {
@@ -228,7 +229,7 @@ const BlogDetails = () => {
         <p className="text-xs text-gray-400 font-medium">SHARE</p>
         <button
           onClick={() => window.open(`https://www.linkedin.com/shareArticle?url=${blogUrl}&title=${shareTitle}&summary=${shareDescription}`, "_blank")}
-          className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           aria-label="Share on LinkedIn"
         >
           <svg className="h-5 w-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
@@ -238,7 +239,7 @@ const BlogDetails = () => {
 
         <button
           onClick={() => window.open(`https://twitter.com/intent/tweet?url=${blogUrl}&text=${shareTitle}&hashtags=B2B,LeadGeneration`, "_blank")}
-          className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           aria-label="Share on X"
         >
           <svg className="h-5 w-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
@@ -248,7 +249,7 @@ const BlogDetails = () => {
 
         <button
           onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${blogUrl}&quote=${shareTitle}`, "_blank")}
-          className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           aria-label="Share on Facebook"
         >
           <svg className="h-5 w-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
@@ -258,7 +259,7 @@ const BlogDetails = () => {
 
         <button
           onClick={() => window.open(`https://api.whatsapp.com/send?text=${shareTitle}%20${blogUrl}`, "_blank")}
-          className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           aria-label="Share on WhatsApp"
         >
           <svg className="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
@@ -270,7 +271,7 @@ const BlogDetails = () => {
 
         <button
           onClick={handleCopyLink}
-          className="p-2 hover:bg-gray-200 rounded-full transition-colors relative"
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors relative"
           aria-label="Copy link"
         >
           <svg className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -357,6 +358,26 @@ const BlogDetails = () => {
 
     return headingList;
   };
+
+  // Auto-scroll TOC to active heading
+  useEffect(() => {
+    if (!tocContainerRef.current || !activeHeading) return;
+
+    const activeElement = tocContainerRef.current.querySelector(`button[data-heading-id="${activeHeading}"]`);
+    if (activeElement) {
+      const containerRect = tocContainerRef.current.getBoundingClientRect();
+      const activeRect = activeElement.getBoundingClientRect();
+      
+      const isVisible = activeRect.top >= containerRect.top && activeRect.bottom <= containerRect.bottom;
+      
+      if (!isVisible) {
+        activeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    }
+  }, [activeHeading]);
 
   useEffect(() => {
     if (!blog?.content) return;
@@ -673,12 +694,10 @@ const BlogDetails = () => {
             {/* Article Section with 3 columns */}
             <div className="w-full mt-8 sm:mt-12 lg:mt-16">
               <div className="grid grid-cols-12 gap-8">
-                {/* Left Column - Share Buttons (Sticky) */}
+                {/* Left Column - Share Buttons (Sticky) - Without Card */}
                 <div className="hidden lg:block lg:col-span-2">
                   <div className="sticky top-16">
-                    <div className="bg-white rounded-lg shadow-md border border-gray-100 p-1">
-                      <ShareButtons />
-                    </div>
+                    <ShareButtons />
                   </div>
                 </div>
 
@@ -746,12 +765,16 @@ const BlogDetails = () => {
                         </h3>
                       </div>
 
-                      <div className="p-4 max-h-[500px] overflow-y-auto">
+                      <div 
+                        ref={tocContainerRef}
+                        className="p-4 max-h-[500px] overflow-y-auto"
+                      >
                         {headings.length > 0 ? (
                           <nav className="space-y-2" aria-label="Table of contents">
                             {headings.map((heading) => (
                               <button
                                 key={heading.id}
+                                data-heading-id={heading.id}
                                 onClick={() => scrollToHeading(heading.id)}
                                 className={`
                                   w-full text-left transition-all duration-200 rounded-lg px-3 py-2 text-sm
@@ -795,15 +818,13 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Mobile Layout */}
+            {/* Mobile Layout - Without Card for Share */}
             <div className="lg:hidden mt-8">
-              {/* Mobile Share Bar */}
+              {/* Mobile Share - Without Card */}
               <div className="mb-6">
-                <div className="bg-white rounded-lg shadow-md border border-gray-100 p-4">
-                  <p className="text-xs text-gray-400 font-medium text-center mb-3">SHARE THIS ARTICLE</p>
-                  <div className="flex items-center justify-center gap-4">
-                    <ShareButtons />
-                  </div>
+                <p className="text-xs text-gray-400 font-medium text-center mb-3">SHARE THIS ARTICLE</p>
+                <div className="flex items-center justify-center gap-4">
+                  <ShareButtons />
                 </div>
               </div>
 
@@ -814,12 +835,20 @@ const BlogDetails = () => {
                     <div className="bg-gradient-to-r from-[#035271] to-[#005F73] p-4">
                       <h3 className="text-white font-semibold text-lg">Table of Contents</h3>
                     </div>
-                    <div className="p-4">
+                    <div className="p-4 max-h-[400px] overflow-y-auto" ref={tocContainerRef}>
                       {headings.map((heading) => (
                         <button
                           key={heading.id}
+                          data-heading-id={heading.id}
                           onClick={() => scrollToHeading(heading.id)}
-                          className="w-full text-left py-2 text-sm text-gray-700 hover:text-[#FF6B2C]"
+                          className={`w-full text-left py-2 text-sm transition-all duration-200 ${
+                            activeHeading === heading.id 
+                              ? 'text-[#FF6B2C] font-medium bg-orange-50 px-2 rounded' 
+                              : 'text-gray-700 hover:text-[#FF6B2C]'
+                          }`}
+                          style={{
+                            paddingLeft: `${(heading.level - 1) * 16 + 12}px`
+                          }}
                         >
                           {heading.text}
                         </button>

@@ -30,6 +30,31 @@ const ChatbotComponent = () => {
     `;
     document.head.appendChild(configScript);
 
+    // ✅ Add custom CSS to override button size & position
+    const style = document.createElement('style');
+    style.id = 'bp-custom-styles';
+    style.innerHTML = `
+      /* Floating button - smaller size */
+      .bp-webchat-launcher {
+        width: 48px !important;
+        height: 48px !important;
+        bottom: 80px !important;  /* ← upar shift karne ke liye value increase karein */
+        right: 20px !important;
+      }
+      
+      /* Button icon inside */
+      .bp-webchat-launcher svg {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      
+      /* Hover effect */
+      .bp-webchat-launcher:hover {
+        transform: scale(1.05) !important;
+      }
+    `;
+    document.head.appendChild(style);
+
     // Inject script
     const script = document.createElement('script');
     script.id = 'bp-webchat-script';
@@ -40,8 +65,10 @@ const ChatbotComponent = () => {
     return () => {
       const s1 = document.getElementById('bp-webchat-script');
       const s2 = document.getElementById('bp-webchat-config');
+      const s3 = document.getElementById('bp-custom-styles');
       if (s1) s1.remove();
       if (s2) s2.remove();
+      if (s3) s3.remove();
     };
   }, []);
 
