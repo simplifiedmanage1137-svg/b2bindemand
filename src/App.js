@@ -40,7 +40,6 @@ import LineChart from "./components/LineChart";
 import AudienceStats from "./components/AudienceStats";
 import KeywordList from "./components/KeywordList";
 import AudienceData from "./components/audienceData"; // Fixed: Uppercase 'A'
-
 function App() {
   return (
     <div className="min-h-screen">
