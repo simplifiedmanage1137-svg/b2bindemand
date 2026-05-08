@@ -1,13 +1,200 @@
-B2BinDemand is a global B2B demand generation company with 170+ specialists helping B2B technology, SaaS, and professional services companies identify in-market buyers and build consistent pipeline through intent-powered, multi-channel campaigns.
-B2BinDemand offers four core solutions: Campaigns+ (full-funnel demand generation), Intent Targeting (buyer intent data and real-time signal identification), Smart Syndication (targeted content syndication to verified in-market buyers), and Event-Based Lead Generation (pre-, during-, and post-event pipeline generation). The company also publishes a blog, a resource library, and runs a cold prospect nurture email programme called The Demand Signal.
-Pages
-Homepage — https://b2bindemand.com/ — Intent-powered B2B lead generation. Identifies in-market B2B buyers and delivers them to pipeline through smart content syndication, intent targeting, and event-based campaigns.
-Campaigns+ — https://b2bindemand.com/campaigns — Full-funnel B2B demand generation campaigns targeting the right accounts, engaging buying committees, and delivering pipeline-ready leads across every channel.
-Intent Targeting — https://b2bindemand.com/intent-targeting — B2B buyer intent data and real-time signal identification to surface in-market accounts before competitors do.
-Smart Syndication — https://b2bindemand.com/smart-syndication — B2B content syndication services that distribute content to verified in-market buyers and deliver qualified leads, not just downloads.
-Event-Based Lead Generation — https://b2bindemand.com/event-based-lead-generation — B2B event lead generation covering attendee acquisition, intent-based targeting of registered attendees, and post-event lead nurturing sequences.
-Blog — https://b2bindemand.com/blog — Insights on B2B lead generation, intent targeting, content syndication, and event marketing for revenue and demand generation teams.
-Library — https://b2bindemand.com/library — Free guides, case studies, and benchmark reports on demand generation, content syndication, and intent-based B2B marketing.
-About B2BinDemand — https://b2bindemand.com/about-b2bindemand — Company overview. 170+ specialists, global operations, focus on B2B technology and SaaS pipeline generation.
-Careers — https://b2bindemand.com/b2bindemand-careers — Open roles in B2B marketing, data research, and demand generation across the US, Canada, and India.
-FAQs — https://b2bindemand.com/faqs — Answers to common questions about content syndication, intent targeting, and demand generation campaigns.
+# B2BinDemand — Complete Site Content for LLM
+
+---
+
+## 1. Company Overview
+
+- Company Name: B2BinDemand
+- Global team size: 170+ specialists
+- Target clients: B2B technology, SaaS, and professional services companies
+- Client stage: Series B+ or mid-market to enterprise scale
+- Primary audience: VP/Director-level Marketing, Demand Generation, and Revenue Operations leaders
+
+**Core Value Proposition:**
+- Identifies in-market B2B buyers
+- Delivers them to your pipeline through smart content syndication, intent targeting, and event-based campaigns
+
+**Headline Positioning:**
+- "We find your next buyer before they find your competitor."
+
+**Key Differentiators:**
+1. Not just content syndication — Smart Syndication with intent-filtered, targeted distribution
+2. Not just leads — BANT-verified, intent-scored, campaign-ready contacts
+3. Full-funnel, multi-channel campaign architecture from a single partner
+4. Real-time buyer intent signals to surface in-market accounts
+
+---
+
+## 2. Key Messaging
+
+| Element | Message |
+|---------|---------|
+| Headline Value Prop | We find your next buyer before they find your competitor |
+| Proof Point | Intent-powered, multi-channel demand generation that fills pipeline with leads who are already researching solutions like yours |
+| Differentiator | Not just content syndication — smart syndication. Not just leads — BANT-verified, intent-scored, campaign-ready contacts |
+| Primary CTA | Request a pilot campaign. See your ICP in action before you commit |
+| Pilot Programme | A defined-scope, time-limited engagement to test the approach against a specific ICP segment before committing to a full programme |
+
+---
+
+## 3. Solutions
+
+### 3.1 Campaigns+
+- **URL:** https://b2bindemand.com/campaigns
+- **SEO Title:** B2B Demand Generation Campaigns | B2BinDemand
+- **Meta Description:** Launch full-funnel B2B campaigns that target the right accounts, engage buying committees, and deliver pipeline-ready leads. One partner. Every channel. No waste.
+- **What it is:** Full-funnel B2B demand generation campaigns
+- **What they do:** Design and run campaigns that target the right accounts, engage buying committees across the full funnel, and deliver pipeline-ready leads
+- **Positioning:** Alternative to managing multiple separate vendors — one partner covering every channel
+
+---
+
+### 3.2 Intent Targeting
+- **URL:** https://b2bindemand.com/intent-targeting
+- **SEO Title:** B2B Intent Targeting & Buyer Intelligence | B2BinDemand
+- **Meta Description:** Reach B2B buyers who are actively researching solutions like yours. B2BinDemand's intent targeting uses real-time signals to surface in-market accounts before your competitors do.
+- **What it is:** B2B buyer intent data and real-time signal identification
+- **How it works:** Uses first-party and third-party intent signals to surface accounts actively researching solutions in your category before competitors engage them
+
+**Key Context:**
+- In-market account = measurable increase in research activity around a topic relevant to your solution
+- Signal types:
+  - First-party signals: website visits, content engagement, email activity
+  - Third-party signals: publisher networks, intent data co-ops
+- Signal quality matters: content consumption signals > page view signals
+- Vendor claims to scrutinise: "real-time intent", "verified signals", "buying committee identification"
+
+---
+
+### 3.3 Smart Syndication
+- **URL:** https://b2bindemand.com/smart-syndication
+- **SEO Title:** B2B Content Syndication Services | B2BinDemand
+- **Meta Description:** Distribute your content to verified B2B buyers who are already in-market. B2BinDemand's Smart Syndication delivers qualified leads, not just downloads.
+- **What it is:** B2B content syndication services built for qualified lead delivery, not download volume
+- **How it works:** Distributes content to verified B2B buyers who are already in-market, using intent-filtered targeting rather than broad keyword-matched distribution
+
+**Why Standard Syndication Fails:**
+1. Broad targeting
+2. Unverified contacts
+3. Leads captured at low-intent moments
+
+**Smart Syndication Solution:**
+- Intent-filtered distribution matched to accounts already researching relevant topics
+- Prioritises audience quality over placement volume
+- Core principle: "The distribution is not the product. The targeting is the product."
+
+---
+
+### 3.4 Event-Based Lead Generation
+- **URL:** https://b2bindemand.com/event-based-lead-generation
+- **SEO Title:** B2B Event Lead Generation Services | B2BinDemand
+- **Meta Description:** Fill your events with qualified attendees and convert them into pipeline. B2BinDemand drives B2B event registrations and post-event lead nurturing at scale.
+- **What it is:** Full-cycle B2B event lead generation
+
+**Three-Stage Process:**
+1. Filling events with qualified attendees
+2. Identifying in-market buyers among registered attendees pre-event
+3. Converting attendees into pipeline post-event via structured nurture sequences
+
+**Key Context:**
+- Most event leads go cold within 3 days if not engaged immediately
+- Intent data can identify which registered attendees are already in an active buying cycle before the event begins
+- High-converting post-event follow-up depends on timing, channel mix, and personalisation based on session attendance
+
+**The Distinction:**
+- Event promotion fills seats
+- Event lead generation fills pipeline
+- "An event is not a lead generation moment — it is a lead acceleration moment, but only if you have the infrastructure to act on it."
+
+---
+
+## 4. Resources
+
+### 4.1 Blog
+- **URL:** https://b2bindemand.com/blog
+- **SEO Title:** B2B Demand Generation Blog | B2BinDemand
+- **Meta Description:** Insights on B2B lead generation, intent targeting, content syndication, and event marketing from the B2BinDemand team. Practical strategies for revenue teams.
+- **Audience:** VP/Director-level Marketing, Demand Generation, and Revenue Operations leaders
+
+**Content Clusters:**
+
+**Cluster 1: Campaigns+**
+- What Is a Full-Funnel B2B Campaign and Why Most Fail at the Middle
+- How to Brief a B2B Demand Generation Agency (Template Included)
+- ABM vs. Broad Demand Gen: When to Use Each in 2026
+- How to Measure B2B Campaign ROI Beyond MQLs
+- The 5-Part B2B Campaign Stack: What You Need and What You Can Outsource
+
+**Cluster 2: Intent Targeting**
+- What Is B2B Buyer Intent Data and How Does It Actually Work?
+- First-Party vs. Third-Party Intent Data: Which Should You Use?
+- How to Use Intent Signals to Prioritise Your Outbound Outreach
+- Intent Data in 2026: What's Changed and What Still Works
+- How Intent Targeting Reduces Wasted Ad Spend in B2B
+
+**Cluster 3: Smart Syndication**
+- B2B Content Syndication: The Complete Guide for 2026
+- Why Your Content Syndication Programme Isn't Converting (and How to Fix It)
+- How to Choose a B2B Content Syndication Partner: 7 Questions to Ask
+- Smart Syndication vs. Standard Content Syndication: What's the Difference?
+- Measuring Content Syndication Success: The Metrics That Actually Matter
+
+**Cluster 4: Event-Based Lead Generation**
+- How to Generate Qualified Leads From Virtual Events (Before, During & After)
+- The B2B Event Promotion Playbook: Driving Registrations That Show Up
+- Post-Event Lead Nurturing: Turning Attendees Into Pipeline
+- In-Person vs. Virtual B2B Events in 2026: Where Should Your Budget Go?
+
+---
+
+### 4.2 Library
+- **URL:** https://b2bindemand.com/library
+- **SEO Title:** B2B Marketing Resources: Case Studies & Reports | B2BinDemand
+- **Meta Description:** Download B2BinDemand's free guides, case studies, and benchmark reports on demand generation, content syndication, and intent-based B2B marketing.
+- **What's available:** Free downloadable guides, case studies, and benchmark reports
+
+**Planned Gated Assets:**
+1. The B2B Intent Targeting Benchmark Report
+2. Smart Syndication ROI Calculator
+3. Event Lead Gen Checklist
+4. B2B Demand Gen Brief Template
+
+---
+
+## 5. Company Pages
+
+### 5.1 About B2BinDemand
+- **URL:** https://b2bindemand.com/about-b2bindemand
+- **SEO Title:** About B2BinDemand | B2B Lead Generation Specialists
+- **Meta Description:** B2BinDemand is a global B2B demand generation company with 170+ specialists and a proven track record helping technology and SaaS companies build consistent pipeline.
+- **Standardised brand name:** B2BinDemand
+
+---
+
+### 5.2 Careers
+- **URL:** https://b2bindemand.com/b2bindemand-careers
+- **SEO Title:** Careers at B2BinDemand | Join Our Demand Gen Team
+- **Meta Description:** Looking for a role in B2B marketing, data research, or demand generation? Explore open positions at B2BinDemand — a fast-growing global team across the US, Canada, and India.
+- **Open roles in:** B2B marketing, data research, and demand generation
+- **Global presence:** US, Canada, and India
+
+---
+
+### 5.3 FAQs
+- **URL:** https://b2bindemand.com/faqs
+- **SEO Title:** B2B Lead Generation FAQs | B2BinDemand
+- **Meta Description:** Got questions about content syndication, intent targeting, or demand generation campaigns? Find answers to the most common B2B lead generation questions here.
+- **Covers:** Common questions about content syndication, intent targeting, and demand generation campaigns
+
+---
+
+## 6. Summary Table
+
+| Section | Key Information |
+|---------|-----------------|
+| Company Size | 170+ specialists |
+| Target Audience | VP/Director-level Marketing, Demand Gen, RevOps |
+| Ideal Client | Series B+, mid-market to enterprise, B2B Tech/SaaS/Professional Services |
+| Core Solutions | Campaigns+, Intent Targeting, Smart Syndication, Event-Based Lead Generation |
+| Headline | We find your next buyer before they find your competitor |
+| Primary CTA | Request a pilot campaign |
