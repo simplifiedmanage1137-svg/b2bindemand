@@ -2,16 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": null,
-  "headers": [
-    {
-      "source": "/(.*).txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
-    }
-  ],
-  "rewrites": [
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/LLMs.txt", "destination": "/LLMs.txt" },
-    { "source": "/LLMs-full.txt", "destination": "/LLMs-full.txt" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "src": "/LLMs.txt", "dest": "/LLMs.txt" },
+    { "src": "/LLMs-full.txt", "dest": "/LLMs-full.txt" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
