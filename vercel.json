@@ -3,8 +3,8 @@
   "outputDirectory": "build",
   "framework": null,
   "routes": [
-    { "src": "/LLMs.txt", "dest": "/LLMs.txt" },
-    { "src": "/LLMs-full.txt", "dest": "/LLMs-full.txt" },
+    { "src": "/llms.txt", "dest": "/llms.txt" },
+    { "src": "/llms-full.txt", "dest": "/llms-full.txt" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
     { "src": "/(.*)", "dest": "/index.html" }
